@@ -1,1 +1,4 @@
-[{ "url": "https://github.com/yaeda/s", "alias": "github" }]
+[
+  { "url": "https://github.com/yaeda/s", "alias": "repo" },
+  { "url": "https://github.com/yaeda/s/issues", "alias": "issues" }
+]
