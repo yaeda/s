@@ -19,8 +19,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const io = require('@actions/io');
-            const exec = require('@actions/exec');
             const urls = require("./url.json");
             await io.mkdirP('./_site/');
             for (var i = 0; i < urls.length; i++) {
