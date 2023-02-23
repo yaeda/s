@@ -28,7 +28,7 @@ jobs:
             await io.mkdirP('./_site/');
             for (var i = 0; i < urls.length; i++) {
               const {url, alias} = urls[i];
-              await exec.exec(`echo '<!DOCTYPE html><meta http-equiv="refresh" content="0;url=${url}">' > ${alias}.html`);
+              await exec.exec(`echo '<!DOCTYPE html><meta http-equiv="refresh" content="0;url=${url}">' > ./_site/${alias}.html`);
             }
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
