@@ -1,0 +1,55 @@
+name: deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "./url.json"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const io = require('@actions/io');
+            const exec = require('@actions/exec');
+            const urls = require("./url.json");
+            await io.mkdirP('./_site/');
+            for (var i = 0; i < urls.length; i++) {
+              const {url, alias} = urls[i];
+              await exec.exec(`echo '<!DOCTYPE html><meta http-equiv="refresh" content="0;url=${url}">' > ${alias}.html`);
+            }
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site/
+
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
