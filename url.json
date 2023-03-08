@@ -1,4 +1,5 @@
 [
   { "url": "https://github.com/yaeda/s", "alias": "repo" },
-  { "url": "https://github.com/yaeda/s/issues", "alias": "issues" }
+  { "url": "https://github.com/yaeda/s/issues", "alias": "issues" },
+  { "url": "https://github.com/yaeda/shortener", "alias": "actions" }
 ]
