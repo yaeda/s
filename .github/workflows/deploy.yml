@@ -5,12 +5,13 @@ on:
     branches:
       - main
     paths:
-      - "url.json"
+      - url.json
+      - 404.html
   workflow_dispatch:
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
