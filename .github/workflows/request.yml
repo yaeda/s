@@ -7,6 +7,7 @@ on:
 # Grant GITHUB_TOKEN the permissions
 permissions:
   issues: write # to comment to the issue
+  contents: write # to update json file
 
 jobs:
   build:
