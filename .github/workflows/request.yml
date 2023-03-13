@@ -8,6 +8,7 @@ on:
 permissions:
   issues: write # to comment to the issue
   contents: write # to update json file
+  pull-requests: write # to create pull request
 
 jobs:
   build:
