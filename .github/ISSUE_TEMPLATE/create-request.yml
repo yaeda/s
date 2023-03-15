@@ -1,17 +1,12 @@
 name: Create Request
 description: Request creation of a new short url
-title: "[Creation]: "
-labels: ["create-request"]
+title: "Create: "
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: input
     id: url
     attributes:
       label: URL
-      description: A URL to be converted to short url.
+      description: A URL forwarded from the short URL.
       placeholder: ex. https://github.com
     validations:
       required: true
@@ -19,7 +14,9 @@ body:
     id: alias
     attributes:
       label: alias
-      description: A short URL would look like https://yaeda.github.io/s/<alias>.
+      description: |
+        A alias used in the short URL. (https://yaeda.github.io/s/`alias`)
+        Only alphanumeric characters, \`-\` and \`_\` can be used.
       placeholder: ex. github
     validations:
       required: false

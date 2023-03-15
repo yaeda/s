@@ -1,0 +1,14 @@
+name: Delete Request
+description: Request deletion of a short url
+title: "Delete: "
+body:
+  - type: input
+    id: alias
+    attributes:
+      label: alias
+      description: |
+        A alias used in the short URL. (https://yaeda.github.io/s/`alias`)
+        Only alphanumeric characters, \`-\` and \`_\` can be used.
+      placeholder: ex. github
+    validations:
+      required: true
