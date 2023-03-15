@@ -10,9 +10,5 @@
   {
     "url": "https://github.com/yaeda/shortener",
     "alias": "actions"
-  },
-  {
-    "url": "https://github.com/",
-    "alias": "github"
   }
 ]
