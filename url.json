@@ -14,5 +14,9 @@
   {
     "url": "https://github.com/",
     "alias": "github"
+  },
+  {
+    "url": "https://google.com/",
+    "alias": "google"
   }
 ]
