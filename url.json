@@ -18,5 +18,9 @@
   {
     "url": "https://twitter.com/",
     "alias": "twitter"
+  },
+  {
+    "url": "https://google.com/",
+    "alias": "google"
   }
 ]
